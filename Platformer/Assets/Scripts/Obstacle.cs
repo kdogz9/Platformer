@@ -1,16 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 
 
-public class RotatingObject : MonoBehaviour
+public class Obstacle : MonoBehaviour
 {
-    public Vector3 rotationDirection = Vector3.up;
-    public float rotationSpeed = 50f;
 
-    private void Update()
-    {
-        transform.Rotate(rotationDirection.normalized, rotationSpeed * Time.deltaTime);
-    }
-}
+ }
