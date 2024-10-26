@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 7206043}
   - component: {fileID: 7206042}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: DeathText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -156,7 +156,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -860, y: -515}
+  m_AnchoredPosition: {x: 136, y: -60}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &7206042
@@ -166,7 +166,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7206040}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
@@ -179,10 +179,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: New Text
+  m_text: 'You died '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
+  m_sharedMaterial: {fileID: 2140032, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -190,13 +190,13 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 4294967295
   m_fontColor: {r: 1, g: 1, b: 1, a: 1}
-  m_enableVertexGradient: 0
+  m_enableVertexGradient: 1
   m_colorMode: 3
   m_fontColorGradient:
-    topLeft: {r: 1, g: 1, b: 1, a: 1}
-    topRight: {r: 1, g: 1, b: 1, a: 1}
-    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
-    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+    topLeft: {r: 0.5698112, g: 0, b: 0.33687395, a: 1}
+    topRight: {r: 1, g: 0.42830187, b: 0.8306473, a: 1}
+    bottomLeft: {r: 1, g: 0.020754695, b: 0.7462589, a: 1}
+    bottomRight: {r: 1, g: 0, b: 0.97625923, a: 1}
   m_fontColorGradientPreset: {fileID: 0}
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
@@ -206,13 +206,13 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 80
+  m_fontSizeBase: 80
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
@@ -242,7 +242,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: -254.21472, y: -66.7937, z: 0, w: 34.31311}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -285,9 +285,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 209839579}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
+  m_Script: {fileID: 11500000, guid: 2d687537154440a3913a9a3c7977978c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CameraTarget: {fileID: 0}
+  FollowDistance: 30
+  MaxFollowDistance: 100
+  MinFollowDistance: 2
+  ElevationAngle: 30
+  MaxElevationAngle: 85
+  MinElevationAngle: 0
+  OrbitalAngle: 0
+  CameraMode: 0
+  MovementSmoothing: 1
+  RotationSmoothing: 0
+  MovementSmoothingValue: 25
+  RotationSmoothingValue: 5
+  MoveSensitivity: 2
 --- !u!81 &209839581
 AudioListener:
   m_ObjectHideFlags: 0
@@ -410,9 +424,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 339995405}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Script: {fileID: 11500000, guid: a73109742c8d47ac822895a473300c29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  NumberOfSamples: 100
+  Benchmark: 0
+  SourceFont: {fileID: 12800000, guid: 997a43b767814dd0a7642ec9b78cba41, type: 3}
 --- !u!108 &339995407
 Light:
   m_ObjectHideFlags: 0
@@ -680,8 +697,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1aa9efabf69d72847ad4d5d670657ebb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationDirection: {x: 0, y: 1, z: 0}
-  rotationSpeed: 50
+  DeathText: {fileID: 0}
 --- !u!1 &611914879
 GameObject:
   m_ObjectHideFlags: 0
@@ -691,7 +707,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 611914881}
-  - component: {fileID: 611914880}
   m_Layer: 0
   m_Name: Global Volume
   m_TagString: Untagged
@@ -699,18 +714,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &611914880
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 611914879}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &611914881
 Transform:
   m_ObjectHideFlags: 0
@@ -776,9 +779,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 660494044}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
+  m_Script: {fileID: 11500000, guid: 2d687537154440a3913a9a3c7977978c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CameraTarget: {fileID: 0}
+  FollowDistance: 30
+  MaxFollowDistance: 100
+  MinFollowDistance: 2
+  ElevationAngle: 30
+  MaxElevationAngle: 85
+  MinElevationAngle: 0
+  OrbitalAngle: 0
+  CameraMode: 0
+  MovementSmoothing: 1
+  RotationSmoothing: 0
+  MovementSmoothingValue: 25
+  RotationSmoothingValue: 5
+  MoveSensitivity: 2
 --- !u!81 &660494047
 AudioListener:
   m_ObjectHideFlags: 0
@@ -1009,9 +1026,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 728003661}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
+  m_Script: {fileID: 11500000, guid: 2d687537154440a3913a9a3c7977978c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CameraTarget: {fileID: 0}
+  FollowDistance: 30
+  MaxFollowDistance: 100
+  MinFollowDistance: 2
+  ElevationAngle: 30
+  MaxElevationAngle: 85
+  MinElevationAngle: 0
+  OrbitalAngle: 0
+  CameraMode: 0
+  MovementSmoothing: 1
+  RotationSmoothing: 0
+  MovementSmoothingValue: 25
+  RotationSmoothingValue: 5
+  MoveSensitivity: 2
 --- !u!81 &728003664
 AudioListener:
   m_ObjectHideFlags: 0
@@ -1244,8 +1275,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1aa9efabf69d72847ad4d5d670657ebb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationDirection: {x: 0, y: 1, z: 0}
-  rotationSpeed: 50
+  DeathText: {fileID: 0}
 --- !u!64 &1034417114
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1472,9 +1502,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 1198897413}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
+  m_Script: {fileID: 11500000, guid: 2d687537154440a3913a9a3c7977978c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CameraTarget: {fileID: 0}
+  FollowDistance: 30
+  MaxFollowDistance: 100
+  MinFollowDistance: 2
+  ElevationAngle: 30
+  MaxElevationAngle: 85
+  MinElevationAngle: 0
+  OrbitalAngle: 0
+  CameraMode: 0
+  MovementSmoothing: 1
+  RotationSmoothing: 0
+  MovementSmoothingValue: 25
+  RotationSmoothingValue: 5
+  MoveSensitivity: 2
 --- !u!81 &1198897416
 AudioListener:
   m_ObjectHideFlags: 0
@@ -1561,8 +1605,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1aa9efabf69d72847ad4d5d670657ebb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationDirection: {x: 0, y: 1, z: 0}
-  rotationSpeed: 50
+  DeathText: {fileID: 0}
 --- !u!1 &1263811082
 GameObject:
   m_ObjectHideFlags: 0
@@ -1574,7 +1617,6 @@ GameObject:
   - component: {fileID: 1263811087}
   - component: {fileID: 1263811086}
   - component: {fileID: 1263811085}
-  - component: {fileID: 1263811084}
   - component: {fileID: 1263811083}
   - component: {fileID: 1263811088}
   m_Layer: 0
@@ -1625,18 +1667,6 @@ MonoBehaviour:
     m_RotationOrder: 4
   rotationLerpTime: 0.01
   invertY: 1
---- !u!114 &1263811084
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1263811082}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!81 &1263811085
 AudioListener:
   m_ObjectHideFlags: 0
@@ -1775,8 +1805,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1aa9efabf69d72847ad4d5d670657ebb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationDirection: {x: 0, y: 1, z: 0}
-  rotationSpeed: 50
+  DeathText: {fileID: 0}
 --- !u!64 &1397592124
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -2117,9 +2146,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1621298899}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
+  m_Script: {fileID: 11500000, guid: 0ec5c6a9783b5c94cb310ca496ffc0d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  rotationSpeed: 5
+  zoomSpeed: 5
+  minZoomDistance: 2
+  maxZoomDistance: 15
 --- !u!81 &1621298902
 AudioListener:
   m_ObjectHideFlags: 0
@@ -2206,8 +2240,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1aa9efabf69d72847ad4d5d670657ebb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationDirection: {x: 0, y: 1, z: 0}
-  rotationSpeed: 50
+  DeathText: {fileID: 0}
 --- !u!1 &1692338404
 GameObject:
   m_ObjectHideFlags: 0
@@ -2255,8 +2288,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1aa9efabf69d72847ad4d5d670657ebb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationDirection: {x: 0, y: 1, z: 0}
-  rotationSpeed: 50
+  DeathText: {fileID: 0}
 --- !u!64 &1692338407
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -2343,7 +2375,6 @@ GameObject:
   - component: {fileID: 1719001550}
   - component: {fileID: 1719001549}
   - component: {fileID: 1719001548}
-  - component: {fileID: 1719001547}
   - component: {fileID: 1719001546}
   m_Layer: 0
   m_Name: Camera7
@@ -2373,18 +2404,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &1719001547
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1719001545}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!81 &1719001548
 AudioListener:
   m_ObjectHideFlags: 0
@@ -2470,7 +2489,6 @@ GameObject:
   - component: {fileID: 1995899068}
   - component: {fileID: 1995899067}
   - component: {fileID: 1995899066}
-  - component: {fileID: 1995899065}
   - component: {fileID: 1995899064}
   m_Layer: 0
   m_Name: Camera6
@@ -2500,18 +2518,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &1995899065
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1995899063}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!81 &1995899066
 AudioListener:
   m_ObjectHideFlags: 0
@@ -5906,7 +5912,10 @@ GameObject:
   - component: {fileID: 5918004657870818263}
   - component: {fileID: 6277793150145195498}
   - component: {fileID: 1981839166379733122}
+  - component: {fileID: 6285948976076580822}
   - component: {fileID: 6285948976076580821}
+  - component: {fileID: 6285948976076580823}
+  - component: {fileID: 6285948976076580824}
   m_Layer: 0
   m_Name: Props_1a
   m_TagString: Untagged
@@ -7296,6 +7305,54 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 5859233324537171573, guid: f184ba4911fbaaa4195a4f967a69e3bf, type: 3}
+--- !u!65 &6285948976076580822
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4424259168491312100}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.4448266, y: 0.22537549, z: 0.63699985}
+  m_Center: {x: 0.95828295, y: 0.00000023816757, z: -0.013031692}
+--- !u!114 &6285948976076580823
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4424259168491312100}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1aa9efabf69d72847ad4d5d670657ebb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DeathText: {fileID: 7206042}
+--- !u!114 &6285948976076580824
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4424259168491312100}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d887c9ce0d846141a1ab3a08ff2b5d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationDirection: {x: 0, y: 1, z: 0}
+  rotationSpeed: 50
 --- !u!64 &6307394396501196903
 MeshCollider:
   m_ObjectHideFlags: 0
