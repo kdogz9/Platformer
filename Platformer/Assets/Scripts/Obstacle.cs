@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace ObstacleNS
 {
@@ -22,8 +23,14 @@ namespace ObstacleNS
                 playerDead = true;
                 deathText.text = "You Died!";
                 Destroy(collision.gameObject);
+                StartCoroutine(RestartLevel());
             }
         }
-        
+
+        private IEnumerator RestartLevel()
+        {
+            yield return new WaitForSeconds(2f);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        } 
     }
 }
