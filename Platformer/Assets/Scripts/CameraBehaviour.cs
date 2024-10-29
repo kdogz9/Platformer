@@ -18,6 +18,7 @@ public class CameraBehaviour : MonoBehaviour
 
     private void Update()
     {
+        if (target == null) return;
         float mouseX = Input.GetAxis("Mouse X") * rotationSpeed;
         float mouseY = Input.GetAxis("Mouse Y") * rotationSpeed;
 

@@ -3,17 +3,27 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class Obstacle : MonoBehaviour
+namespace ObstacleNS
 {
-    public TMP_Text DeathText;
-
-    private void OnTriggerEnter(Collider other)
+    public class Obstacle : MonoBehaviour
     {
-        if (other.CompareTag("Player"))  // Ensure that only the player triggers this action
+        public bool playerDead;
+        private TMP_Text deathText;
+
+        private void Start()
         {
-            Destroy(other.gameObject);   // Destroy the entire GameObject
-            DeathText.text = "You died";
-            Debug.Log("You died");
+            deathText = GameObject.Find("DeathText").GetComponent<TMP_Text>();
         }
+
+        private void OnCollisionEnter(Collision collision)
+        {
+            if (collision.collider)
+            {
+                playerDead = true;
+                deathText.text = "You Died!";
+                Destroy(collision.gameObject);
+            }
+        }
+        
     }
 }
