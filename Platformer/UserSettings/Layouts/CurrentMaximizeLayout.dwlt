@@ -93,7 +93,7 @@ MonoBehaviour:
     m_HSlider: 0
     m_VSlider: 0
     m_IgnoreScrollWheelUntilClicked: 0
-    m_EnableMouseInput: 1
+    m_EnableMouseInput: 0
     m_EnableSliderZoomHorizontal: 0
     m_EnableSliderZoomVertical: 0
     m_UniformScale: 1
@@ -104,18 +104,18 @@ MonoBehaviour:
       y: 21
       width: 615.6
       height: 390.8
-    m_Scale: {x: 0.40078124, y: 0.40078124}
-    m_Translation: {x: 307.8, y: 195.4}
+    m_Scale: {x: 0.41280466, y: 0.41280466}
+    m_Translation: {x: 313.02597, y: 195.4}
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
-      x: -768
-      y: -487.54776
-      width: 1536
-      height: 975.0955
+      x: -758.2908
+      y: -473.34735
+      width: 1491.2622
+      height: 946.6947
     m_MinimalGUI: 1
   m_defaultScale: 0.40078124
   m_LastWindowPixelSize: {x: 769.5, y: 514.75}
@@ -195,8 +195,8 @@ MonoBehaviour:
     y: 0
     width: 382.4
     height: 432.8
-  m_MinSize: {x: 201, y: 221}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 6}
   m_Panes:
   - {fileID: 6}
@@ -238,24 +238,24 @@ MonoBehaviour:
     m_OverlaysVisible: 1
   m_SceneHierarchy:
     m_TreeViewState:
-      scrollPos: {x: 0, y: 201.20001}
-      m_SelectedIDs: 125c0000
-      m_LastClickedID: 23570
-      m_ExpandedIDs: acbdffff30fbffff785b0000aa5b0000b45b0000c05b0000845c00000c5e0000165e0000
+      scrollPos: {x: 0, y: 0}
+      m_SelectedIDs: 
+      m_LastClickedID: 0
+      m_ExpandedIDs: 30fbffff645b0000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: 
-        m_OriginalName: 
+        m_Name: Canvas
+        m_OriginalName: Canvas
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: 0
+        m_UserData: 23396
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
-        m_OriginalEventType: 11
+        m_OriginalEventType: 0
         m_IsRenamingFilename: 0
         m_ClientGUIView: {fileID: 5}
       m_SearchString: 
@@ -661,9 +661,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -33.36618, y: 6.7385716, z: 2.8486495}
+    m_Target: {x: 1213.5723, y: 519.2154, z: 0}
     speed: 2
-    m_Value: {x: -33.36618, y: 6.7385716, z: 2.8486495}
+    m_Value: {x: 1213.5723, y: 519.2154, z: 0}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -709,13 +709,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.3010131, y: 0.41267243, z: -0.14662808, w: -0.84714776}
+    m_Target: {x: -0.33794004, y: 0.1145241, z: -0.04146437, w: -0.9332893}
     speed: 2
-    m_Value: {x: -0.3010031, y: 0.4126587, z: -0.14662321, w: -0.84711957}
+    m_Value: {x: -0.33792862, y: 0.11452024, z: -0.041462973, w: -0.9332578}
   m_Size:
-    m_Target: 1.6080189
+    m_Target: 214.24286
     speed: 2
-    m_Value: 1.6080189
+    m_Value: 214.24286
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -812,7 +812,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scripts
+    - Assets/Scenes
     m_Globs: []
     m_OriginalText: 
     m_ImportLogFlags: 0
@@ -820,16 +820,16 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scripts
+  - Assets/Scenes
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\keish\OneDrive\Documents\Games development\Egg studios\Platformer\Platformer
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 55}
-    m_SelectedIDs: e65f0000
-    m_LastClickedID: 24550
-    m_ExpandedIDs: 00000000bc5f0000be5f0000c05f0000c25f0000c45f000000ca9a3bffffff7f
+    scrollPos: {x: 0, y: 0}
+    m_SelectedIDs: f25f0000
+    m_LastClickedID: 24562
+    m_ExpandedIDs: 00000000ce5f0000d05f0000d25f0000d45f0000d65f000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -857,7 +857,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000bc5f0000be5f0000c05f0000c25f0000c45f000000ca9a3bffffff7f
+    m_ExpandedIDs: 00000000ce5f0000d05f0000d25f0000d45f0000d65f0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -882,8 +882,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 125c0000
-    m_LastClickedInstanceID: 23570
+    m_SelectedInstanceIDs: 
+    m_LastClickedInstanceID: 0
     m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c62300008e260000fa5f0000
     m_RenameOverlay:
@@ -966,8 +966,8 @@ MonoBehaviour:
     y: 0
     width: 536
     height: 722.8
-  m_MinSize: {x: 276, y: 71}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 13}
   m_Panes:
   - {fileID: 13}
@@ -1014,7 +1014,7 @@ MonoBehaviour:
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
   m_LastInspectedObjectInstanceID: -1
-  m_LastVerticalScrollValue: 504.00012
+  m_LastVerticalScrollValue: 164
   m_GlobalObjectId: 
   m_InspectorMode: 0
   m_LockTracker:
