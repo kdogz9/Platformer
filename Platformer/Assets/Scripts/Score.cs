@@ -5,12 +5,8 @@ using UnityEngine;
 
 public class Score : MonoBehaviour
 {
-   //  public class ScoreManager
-   // private TMP_Text ScoreText;
-
-    
         private int score = 0; // Variable to hold the score
-         
+        public TMP_Text scoreText;
 
         // Method to add score
         public void AddScore(int scoreToAdd)
@@ -29,8 +25,8 @@ public class Score : MonoBehaviour
         // Method to update the display text
         private void UpdateDisplay()
         {
-           // displayText = "Score: " + score; // Update display text
-                                             // Here you would include code to actually update the UI
+           scoreText.text = "Score: " + score;  // Update display text
+                                              // Here you would include code to actually update the UI
         }
     }
 
