@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 [RequireComponent(typeof(Rigidbody))]
 public class PlayerController : MonoBehaviour
 {
@@ -36,6 +36,16 @@ public class PlayerController : MonoBehaviour
             Vector3 jump = new Vector3(0.0f, (jumpForce * 10), 0.0f);
             _rb.AddForce(jump);
             _isGrounded = false;
+        }
+
+        MainMenu();
+    }
+
+    public void MainMenu()
+    {
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            SceneManager.LoadSceneAsync(0);
         }
     }
 }
