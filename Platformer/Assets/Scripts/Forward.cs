@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LeftorRight : MonoBehaviour
+public class Forward : MonoBehaviour
 {
 
     public float moveDistance = 5f; // the distance the object moves at 
