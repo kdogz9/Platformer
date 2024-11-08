@@ -10,13 +10,14 @@ public class Win : MonoBehaviour
 
     private void Start()
     {
-        WinText = GameObject.Find("WinText").GetComponent<TMP_Text>();
+        WinText = GameObject.Find("Win").GetComponent<TMP_Text>();
     }
-
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider collision)
     {
-        if (collision.collider)
+        if (collision.gameObject.tag == "Player")
         {
+            Debug.Log("Won");
+            WinText.gameObject.SetActive(true);
             WinText.text = "You have Won!";
             StartCoroutine(RestartLevel()); 
         }
@@ -26,6 +27,6 @@ public class Win : MonoBehaviour
     private static IEnumerator RestartLevel()
     {
         yield return new WaitForSeconds(2f);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        SceneManager.LoadScene(0);
     }
 }
